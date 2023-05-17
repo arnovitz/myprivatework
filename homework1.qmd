@@ -380,7 +380,7 @@ The age gaps dataset includes "gender" columns, which always contain the values 
 The following is a data dictionary of the variables used
 
 | variable            | class     | description                                                                                             |
-|:--------------------|:----------|:--------------------------------------------------------------------------------------------------------|
+|:-----------|:-----------|:----------------------------------------------|
 | movie_name          | character | Name of the film                                                                                        |
 | release_year        | integer   | Release year                                                                                            |
 | director            | character | Director of the film                                                                                    |
@@ -397,7 +397,17 @@ The following is a data dictionary of the variables used
 
 ```{r}
 
+# Load the data
 age_gaps <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv')
+
+# Calculate the average age difference
+average_age_difference <- mean(age_gaps$age_difference)
+
+# Plot the distribution of age differences
+ggplot(age_gaps, aes(x = age_difference)) +
+  geom_histogram() +
+  geom_vline(xintercept = average_age_difference, color = 'red') +
+  labs(x = 'Age Difference', y = 'Count', title = 'Distribution of Age Differences in Movies')
 
 
 ```
@@ -406,14 +416,32 @@ How would you explore this data set? Here are some ideas of tables/ graphs to he
 
 -   How is `age_difference` distributed? What's the 'typical' `age_difference` in movies?
 
+I would use a histogram to see using age_difference variable. I would plot it by release year or by movie. Depending on how the data shows I could use a fascet wrap by eras or by director.
+
 -   The `half plus seven\` rule. Large age disparities in relationships carry certain stigmas. One popular rule of thumb is the [half-your-age-plus-seven](https://en.wikipedia.org/wiki/Age_disparity_in_sexual_relationships#The_.22half-your-age-plus-seven.22_rule) rule. This rule states you should never date anyone under half your age plus seven, establishing a minimum boundary on whom one can date. In order for a dating relationship to be acceptable under this rule, your partner's age must be:
 
 $$\frac{\text{Your age}}{2} + 7 < \text{Partner Age} < (\text{Your age} - 7) * 2$$ How frequently does this rule apply in this dataset?
 
 -   Which movie has the greatest number of love interests?
+Error in open.connection(3L, "rb") :
+schannel: failed to receive handshake, SSL/TLS connection failed did not connect
+
+
 -   Which actors/ actresses have the greatest number of love interests in this dataset?
+
+Error in open.connection(3L, "rb") :
+schannel: failed to receive handshake, SSL/TLS connection failed
+
 -   Is the mean/median age difference staying constant over the years (1935 - 2022)?
+
+Error in open.connection(3L, "rb") :
+schannel: failed to receive handshake, SSL/TLS connection failed
+
 -   How frequently does Hollywood depict same-gender love interests?
+
+Error in open.connection(3L, "rb") :
+schannel: failed to receive handshake, SSL/TLS connection failed
+
 
 # Deliverables
 
@@ -422,7 +450,7 @@ There is a lot of explanatory text, comments, etc. You do not need these, so del
 # Details
 
 -   Who did you collaborate with: Isabel Gonzalez
--   Approximately how much time did you spend on this problem set: 4-5 hours
+-   Approximately how much time did you spend on this problem set: 5 hours
 -   What, if anything, gave you the most trouble: little errors I was unable to fix. Being stubborn and not following the 15 minute rule.
 
 **Please seek out help when you need it,** and remember the [15-minute rule](https://mam2022.netlify.app/syllabus/#the-15-minute-rule){target="_blank"}. You know enough R (and have enough examples of code from class and your readings) to be able to do this. If you get stuck, ask for help from others, post a question on Slack-- and remember that I am here to help too!
