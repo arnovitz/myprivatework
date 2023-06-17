@@ -1,0 +1,1359 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Final Group 18 project},
+  pdfauthor={Group 18 Paula Lagos, Ignacio Nino, Nicholas Arnovitz, Isabel Gonzalez},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Final Group 18 project}
+\author{Group 18 Paula Lagos, Ignacio Nino, Nicholas Arnovitz, Isabel
+Gonzalez}
+\date{2023-06-08}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{the-problem-predicting-credit-card-fraud}{%
+\section{The problem: predicting credit card
+fraud}\label{the-problem-predicting-credit-card-fraud}}
+
+The goal of the project is to predict fraudulent credit card
+transactions.
+
+We will be using a dataset with credit card transactions containing
+legitimate and fraud transactions. Fraud is typically well below 1\% of
+all transactions, so a naive model that predicts that all transactions
+are legitimate and not fraudulent would have an accuracy of well over
+99\%-- pretty good, no?
+
+You can read more on credit card fraud on
+\href{https://www.scirp.org/journal/paperinformation.aspx?paperid=105944}{Credit
+Card Fraud Detection Using Weighted Support Vector Machine}
+
+The dataset we will use consists of credit card transactions and it
+includes information about each transaction including customer details,
+the merchant and category of purchase, and whether or not the
+transaction was a fraud.
+
+\hypertarget{obtain-the-data}{%
+\subsection{Obtain the data}\label{obtain-the-data}}
+
+The dataset is too large to be hosted on Canvas or Github, so please
+download it from dropbox
+\url{https://www.dropbox.com/sh/q1yk8mmnbbrzavl/AAAxzRtIhag9Nc_hODafGV2ka?dl=0}
+and save it in your \texttt{dsb} repo, under the \texttt{data} folder.
+
+As we will be building a classifier model using tidymodels, there's two
+things we need to do:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Define the outcome variable \texttt{is\_fraud} as a factor, or
+  categorical, variable, instead of the numerical 0-1 varaibles.
+\item
+  In tidymodels, the first level is the event of interest. If we leave
+  our data as is, \texttt{0} is the first level, but we want to find out
+  when we actually did (\texttt{1}) have a fraudulent transaction
+\end{enumerate}
+
+\begin{verbatim}
+## Rows: 671,028
+## Columns: 14
+## $ trans_date_trans_time <dttm> 2019-02-22 07:32:58, 2019-02-16 15:07:20, 2019-~
+## $ trans_year            <dbl> 2019, 2019, 2019, 2019, 2019, 2019, 2019, 2020, ~
+## $ category              <chr> "entertainment", "kids_pets", "personal_care", "~
+## $ amt                   <dbl> 7.79, 3.89, 8.43, 40.00, 54.04, 95.61, 64.95, 3.~
+## $ city                  <chr> "Veedersburg", "Holloway", "Arnold", "Apison", "~
+## $ state                 <chr> "IN", "OH", "MO", "TN", "CO", "GA", "MN", "AL", ~
+## $ lat                   <dbl> 40.1186, 40.0113, 38.4305, 35.0149, 39.4584, 32.~
+## $ long                  <dbl> -87.2602, -80.9701, -90.3870, -85.0164, -106.385~
+## $ city_pop              <dbl> 4049, 128, 35439, 3730, 277, 1841, 136, 190178, ~
+## $ job                   <chr> "Development worker, community", "Child psychoth~
+## $ dob                   <date> 1959-10-19, 1946-04-03, 1985-03-31, 1991-01-28,~
+## $ merch_lat             <dbl> 39.41679, 39.74585, 37.73078, 34.53277, 39.95244~
+## $ merch_long            <dbl> -87.52619, -81.52477, -91.36875, -84.10676, -106~
+## $ is_fraud              <fct> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+\end{verbatim}
+
+The data dictionary is as follows
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule()
+column(variable) & description \\
+\midrule()
+\endhead
+trans\_date\_trans\_time & Transaction DateTime \\
+trans\_year & Transaction year \\
+category & category of merchant \\
+amt & amount of transaction \\
+city & City of card holder \\
+state & State of card holder \\
+lat & Latitude location of purchase \\
+long & Longitude location of purchase \\
+city\_pop & card holder's city population \\
+job & job of card holder \\
+dob & date of birth of card holder \\
+merch\_lat & Latitude Location of Merchant \\
+merch\_long & Longitude Location of Merchant \\
+is\_fraud & Whether Transaction is Fraud (1) or Not (0) \\
+\bottomrule()
+\end{longtable}
+
+We also add some of the variables we considered in our EDA for this
+dataset during homework 2.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{card\_fraud }\OtherTok{\textless{}{-}}\NormalTok{ card\_fraud }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{( }\AttributeTok{hour =} \FunctionTok{hour}\NormalTok{(trans\_date\_trans\_time),}
+          \AttributeTok{wday =} \FunctionTok{wday}\NormalTok{(trans\_date\_trans\_time, }\AttributeTok{label =} \ConstantTok{TRUE}\NormalTok{),}
+          \AttributeTok{month\_name =} \FunctionTok{month}\NormalTok{(trans\_date\_trans\_time, }\AttributeTok{label =} \ConstantTok{TRUE}\NormalTok{),}
+          \AttributeTok{age =} \FunctionTok{interval}\NormalTok{(dob, trans\_date\_trans\_time) }\SpecialCharTok{/} \FunctionTok{years}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename}\NormalTok{(}\AttributeTok{year =}\NormalTok{ trans\_year) }\SpecialCharTok{\%\textgreater{}\%} 
+  
+  \FunctionTok{mutate}\NormalTok{(}
+    
+    \CommentTok{\# convert latitude/longitude to radians}
+    \AttributeTok{lat1\_radians =}\NormalTok{ lat }\SpecialCharTok{/} \FloatTok{57.29577951}\NormalTok{,}
+    \AttributeTok{lat2\_radians =}\NormalTok{ merch\_lat }\SpecialCharTok{/} \FloatTok{57.29577951}\NormalTok{,}
+    \AttributeTok{long1\_radians =}\NormalTok{ long }\SpecialCharTok{/} \FloatTok{57.29577951}\NormalTok{,}
+    \AttributeTok{long2\_radians =}\NormalTok{ merch\_long }\SpecialCharTok{/} \FloatTok{57.29577951}\NormalTok{,}
+    
+    \CommentTok{\# calculate distance in miles}
+    \AttributeTok{distance\_miles =} \FloatTok{3963.0} \SpecialCharTok{*} \FunctionTok{acos}\NormalTok{((}\FunctionTok{sin}\NormalTok{(lat1\_radians) }\SpecialCharTok{*} \FunctionTok{sin}\NormalTok{(lat2\_radians)) }\SpecialCharTok{+} \FunctionTok{cos}\NormalTok{(lat1\_radians) }\SpecialCharTok{*} \FunctionTok{cos}\NormalTok{(lat2\_radians) }\SpecialCharTok{*} \FunctionTok{cos}\NormalTok{(long2\_radians }\SpecialCharTok{{-}}\NormalTok{ long1\_radians)),}
+
+    \CommentTok{\# calculate distance in km}
+    \AttributeTok{distance\_km =} \FloatTok{6377.830272} \SpecialCharTok{*} \FunctionTok{acos}\NormalTok{((}\FunctionTok{sin}\NormalTok{(lat1\_radians) }\SpecialCharTok{*} \FunctionTok{sin}\NormalTok{(lat2\_radians)) }\SpecialCharTok{+} \FunctionTok{cos}\NormalTok{(lat1\_radians) }\SpecialCharTok{*} \FunctionTok{cos}\NormalTok{(lat2\_radians) }\SpecialCharTok{*} \FunctionTok{cos}\NormalTok{(long2\_radians }\SpecialCharTok{{-}}\NormalTok{ long1\_radians))}
+
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exploratory-data-analysis-eda}{%
+\subsection{Exploratory Data Analysis
+(EDA)}\label{exploratory-data-analysis-eda}}
+
+You have done some EDA and you can pool together your group's expertise
+in which variables to use as features. You can reuse your EDA from
+earlier, but we expect at least a few visualisations and/or tables to
+explore the dataset and identify any useful features.
+
+Group all variables by type and examine each variable class by class.
+The dataset has the following types of variables:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Strings
+\item
+  Geospatial Data
+\item
+  Dates
+\item
+  Date/Times
+\item
+  Numerical
+\end{enumerate}
+
+Strings are usually not a useful format for classification problems. The
+strings should be converted to factors, dropped, or otherwise
+transformed.
+
+\textbf{\emph{Strings to Factors}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{category}, Category of Merchant
+\item
+  \texttt{job}, Job of Credit Card Holder
+\end{itemize}
+
+\textbf{\emph{Strings to Geospatial Data}}
+
+We have plenty of geospatial data as lat/long pairs, so I want to
+convert city/state to lat/long so I can compare to the other geospatial
+variables. This will also make it easier to compute new variables like
+the distance the transaction is from the home location.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{city}, City of Credit Card Holder
+\item
+  \texttt{state}, State of Credit Card Holder
+\end{itemize}
+
+\hypertarget{exploring-factors-how-is-the-compactness-of-categories}{%
+\subsection{Exploring factors: how is the compactness of
+categories?}\label{exploring-factors-how-is-the-compactness-of-categories}}
+
+\begin{itemize}
+\tightlist
+\item
+  Do we have excessive number of categories? Do we want to combine some?
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{card\_fraud }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{count}\NormalTok{(category, }\AttributeTok{sort=}\ConstantTok{TRUE}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{perc =}\NormalTok{ n}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(n))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 14 x 3
+##    category           n   perc
+##    <chr>          <int>  <dbl>
+##  1 gas_transport  68046 0.101 
+##  2 grocery_pos    63791 0.0951
+##  3 home           63597 0.0948
+##  4 shopping_pos   60416 0.0900
+##  5 kids_pets      58772 0.0876
+##  6 shopping_net   50743 0.0756
+##  7 entertainment  48521 0.0723
+##  8 food_dining    47527 0.0708
+##  9 personal_care  46843 0.0698
+## 10 health_fitness 44341 0.0661
+## 11 misc_pos       41244 0.0615
+## 12 misc_net       32829 0.0489
+## 13 grocery_net    23485 0.0350
+## 14 travel         20873 0.0311
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{card\_fraud }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{count}\NormalTok{(job, }\AttributeTok{sort=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{perc =}\NormalTok{ n}\SpecialCharTok{/}\FunctionTok{sum}\NormalTok{(n))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 494 x 3
+##    job                            n    perc
+##    <chr>                      <int>   <dbl>
+##  1 Film/video editor           5106 0.00761
+##  2 Exhibition designer         4728 0.00705
+##  3 Naval architect             4546 0.00677
+##  4 Surveyor, land/geomatics    4448 0.00663
+##  5 Materials engineer          4292 0.00640
+##  6 Designer, ceramics/pottery  4262 0.00635
+##  7 IT trainer                  4014 0.00598
+##  8 Financial adviser           3959 0.00590
+##  9 Systems developer           3948 0.00588
+## 10 Environmental consultant    3831 0.00571
+## # i 484 more rows
+\end{verbatim}
+
+The predictors \texttt{category} and \texttt{job} are transformed into
+factors.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{card\_fraud }\OtherTok{\textless{}{-}}\NormalTok{ card\_fraud }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{category =} \FunctionTok{factor}\NormalTok{(category),}
+         \AttributeTok{job =} \FunctionTok{factor}\NormalTok{(job))}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{category} has 14 unique values, and \texttt{job} has 494 unique
+values. The dataset is quite large, with over 670K records, so these
+variables don't have an excessive number of levels at first glance.
+However, it is worth seeing if we can compact the levels to a smaller
+number.
+
+\hypertarget{why-do-we-care-about-the-number-of-categories-and-whether-they-are-excessive}{%
+\subsubsection{Why do we care about the number of categories and whether
+they are
+``excessive''?}\label{why-do-we-care-about-the-number-of-categories-and-whether-they-are-excessive}}
+
+Consider the extreme case where a dataset had categories that only
+contained one record each. There is simply insufficient data to make
+correct predictions using category as a predictor on new data with that
+category label. Additionally, if your modeling uses dummy variables,
+having an extremely large number of categories will lead to the
+production of a huge number of predictors, which can slow down the
+fitting. This is fine if all the predictors are useful, but if they
+aren't useful (as in the case of having only one record for a category),
+trimming them will improve the speed and quality of the data fitting.
+
+If I had subject matter expertise, I could manually combine categories.
+If you don't have subject matter expertise, or if performing this task
+would be too labor intensive, then you can use cutoffs based on the
+amount of data in a category. If the majority of the data exists in only
+a few categories, then it might be reasonable to keep those categories
+and lump everything else in an ``other'' category or perhaps even drop
+the data points in smaller categories.
+
+\hypertarget{do-all-variables-have-sensible-types}{%
+\subsection{Do all variables have sensible
+types?}\label{do-all-variables-have-sensible-types}}
+
+Consider each variable and decide whether to keep, transform, or drop
+it. This is a mixture of Exploratory Data Analysis and Feature
+Engineering, but it's helpful to do some simple feature engineering as
+you explore the data. In this project, we have all data to begin with,
+so any transformations will be performed on the entire dataset. Ideally,
+do the transformations as a \texttt{recipe\_step()} in the tidymodels
+framework. Then the transformations would be applied to any data the
+recipe was used on as part of the modeling workflow. There is less
+chance of data leakage or missing a step when you perform the feature
+engineering in the recipe.
+
+\hypertarget{which-variables-to-keep-in-your-model}{%
+\subsection{Which variables to keep in your
+model?}\label{which-variables-to-keep-in-your-model}}
+
+You have a number of variables and you have to decide which ones to use
+in your model. For instance, you have the latitude/lognitude of the
+customer, that of the merchant, the same data in radians, as well as the
+\texttt{distance\_km} and \texttt{distance\_miles}. Do you need them
+all?
+
+\hypertarget{fit-your-workflows-in-smaller-sample}{%
+\subsection{Fit your workflows in smaller
+sample}\label{fit-your-workflows-in-smaller-sample}}
+
+You will be running a series of different models, along the lines of the
+California housing example we have seen in class. However, this dataset
+has 670K rows and if you try various models and run cross validation on
+them, your computer may slow down or crash.
+
+Thus, we will work with a smaller sample of 10\% of the values the
+original dataset to identify the best model, and once we have the best
+model we can use the full dataset to train- test our best model.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# select a smaller subset}
+\NormalTok{my\_card\_fraud }\OtherTok{\textless{}{-}}\NormalTok{ card\_fraud }\SpecialCharTok{\%\textgreater{}\%} 
+  \CommentTok{\# select a smaller subset, 10\% of the entire dataframe }
+  \FunctionTok{slice\_sample}\NormalTok{(}\AttributeTok{prop =} \FloatTok{0.10}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(is\_fraud,amt,distance\_km,age,hour,category)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{split-the-data-in-training---testing}{%
+\subsection{Split the data in training -
+testing}\label{split-the-data-in-training---testing}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# **Split the data**}
+
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+
+\NormalTok{data\_split }\OtherTok{\textless{}{-}} \FunctionTok{initial\_split}\NormalTok{(my\_card\_fraud, }\CommentTok{\# updated data}
+                           \AttributeTok{prop =} \FloatTok{0.8}\NormalTok{, }
+                           \AttributeTok{strata =}\NormalTok{ is\_fraud)}
+
+\NormalTok{card\_fraud\_train }\OtherTok{\textless{}{-}} \FunctionTok{training}\NormalTok{(data\_split) }
+\NormalTok{card\_fraud\_test }\OtherTok{\textless{}{-}} \FunctionTok{testing}\NormalTok{(data\_split)}
+
+\CommentTok{\#Validating that amount distributes better when logaritmic}
+\NormalTok{card\_fraud }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{log}\NormalTok{(amt))}\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{final_group_project_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{cross-validation}{%
+\subsection{Cross Validation}\label{cross-validation}}
+
+Start with 3 CV folds to quickly get an estimate for the best model and
+you can increase the number of folds to 5 or 10 later.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\NormalTok{cv\_folds }\OtherTok{\textless{}{-}} \FunctionTok{vfold\_cv}\NormalTok{(}\AttributeTok{data =}\NormalTok{ card\_fraud\_train, }
+                          \AttributeTok{v =} \DecValTok{3}\NormalTok{, }
+                          \AttributeTok{strata =}\NormalTok{ is\_fraud)}
+\NormalTok{cv\_folds }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## #  3-fold cross-validation using stratification 
+## # A tibble: 3 x 2
+##   splits                id   
+##   <list>                <chr>
+## 1 <split [35787/17894]> Fold1
+## 2 <split [35787/17894]> Fold2
+## 3 <split [35788/17893]> Fold3
+\end{verbatim}
+
+\hypertarget{define-a-tidymodels-recipe}{%
+\subsection{\texorpdfstring{Define a tidymodels
+\texttt{recipe}}{Define a tidymodels recipe}}\label{define-a-tidymodels-recipe}}
+
+What steps are you going to add to your recipe? Do you need to do any
+log transformations? Yes we need to do a log transformation on the
+amount given the data was heavily skewed to the left. Few number of very
+large transactions.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# \#fraud\_rec \textless{}{-} recipe(is\_fraud \textasciitilde{} ., data = card\_fraud\_train) \%\textgreater{}\%}
+\CommentTok{\#  \# step\_log(amt)\%\textgreater{}\%}
+\CommentTok{\#   step\_novel(all\_nominal(), {-}all\_outcomes()) \%\textgreater{}\% \# Use before \textasciigrave{}step\_dummy()\textasciigrave{} so new level is dummified}
+\CommentTok{\#   step\_dummy(hour,wday,month\_name, {-}all\_outcomes()) \%\textgreater{}\% }
+\CommentTok{\#   step\_zv(is\_fraud, amt,distance\_km,age,hour,wday,month\_name, {-}all\_outcomes())  \%\textgreater{}\% }
+\CommentTok{\#   step\_normalize(amt,distance\_km,age) \%\textgreater{}\% }
+\CommentTok{\#   step\_naomit(everything(), skip = TRUE)}
+\CommentTok{\#card\_fraud\_test2\textless{}{-}as.data.frame(card\_fraud\_test)}
+
+\NormalTok{fraud\_rec }\OtherTok{\textless{}{-}} \FunctionTok{recipe}\NormalTok{(is\_fraud }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ card\_fraud\_train) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{step\_log}\NormalTok{(amt) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{step\_naomit}\NormalTok{(}\FunctionTok{everything}\NormalTok{(), }\AttributeTok{skip =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{step\_novel}\NormalTok{(}\FunctionTok{all\_nominal}\NormalTok{(), }\SpecialCharTok{{-}}\FunctionTok{all\_outcomes}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Use before \textasciigrave{}step\_dummy()\textasciigrave{} so new level is dummified}
+  \FunctionTok{step\_normalize}\NormalTok{(}\FunctionTok{all\_numeric}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{step\_dummy}\NormalTok{(}\FunctionTok{all\_nominal}\NormalTok{(), }\SpecialCharTok{{-}}\FunctionTok{all\_outcomes}\NormalTok{()) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{step\_zv}\NormalTok{(}\FunctionTok{all\_numeric}\NormalTok{(), }\SpecialCharTok{{-}}\FunctionTok{all\_outcomes}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+Once you have your recipe, you can check the pre-processed dataframe
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{prepped\_data }\OtherTok{\textless{}{-}} 
+\NormalTok{  fraud\_rec }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# use the recipe object}
+  \FunctionTok{prep}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# perform the recipe on training data}
+  \FunctionTok{juice}\NormalTok{() }\CommentTok{\# extract only the preprocessed dataframe }
+
+\FunctionTok{glimpse}\NormalTok{(prepped\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 53,681
+## Columns: 18
+## $ amt                     <dbl> -1.26954983, -0.93770604, 1.69479423, -1.06754~
+## $ distance_km             <dbl> 1.07940242, 2.00731983, 1.09754939, 0.76893999~
+## $ age                     <dbl> 1.763960359, -0.001258131, -1.388569328, -1.72~
+## $ hour                    <dbl> 1.05763722, 0.61724878, 0.32365650, 0.47045264~
+## $ is_fraud                <fct> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ category_food_dining    <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0~
+## $ category_gas_transport  <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0~
+## $ category_grocery_net    <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ category_grocery_pos    <dbl> 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0~
+## $ category_health_fitness <dbl> 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ category_home           <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1~
+## $ category_kids_pets      <dbl> 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ category_misc_net       <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ category_misc_pos       <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0~
+## $ category_personal_care  <dbl> 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ category_shopping_net   <dbl> 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ category_shopping_pos   <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0~
+## $ category_travel         <dbl> 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+\end{verbatim}
+
+\hypertarget{define-various-models}{%
+\subsection{Define various models}\label{define-various-models}}
+
+You should define the following classification models:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Logistic regression, using the \texttt{glm} engine
+\item
+  Decision tree, using the \texttt{C5.0} engine
+\item
+  Random Forest, using the \texttt{ranger} engine and setting
+  \texttt{importance\ =\ "impurity"})\\
+\item
+  A boosted tree using Extreme Gradient Boosting, and the
+  \texttt{xgboost} engine
+\item
+  A k-nearest neighbours, using 4 nearest\_neighbors and the
+  \texttt{kknn} engine
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Model Building }
+
+\CommentTok{\# 1. Pick a \textasciigrave{}model type\textasciigrave{}}
+\CommentTok{\# 2. set the \textasciigrave{}engine\textasciigrave{}}
+\CommentTok{\# 3. Set the \textasciigrave{}mode\textasciigrave{}:  classification}
+
+
+\CommentTok{\# 1. Logistic regression, using the \textasciigrave{}glm\textasciigrave{} engine}
+
+\CommentTok{\# 2. Decision tree, using the \textasciigrave{}C5.0\textasciigrave{} engine}
+\CommentTok{\# 3. Random Forest, using  the \textasciigrave{}ranger\textasciigrave{} engine and setting \textasciigrave{}importance = "impurity"\textasciigrave{})  }
+\CommentTok{\# 4. A boosted tree using Extreme Gradient Boosting, and the \textasciigrave{}xgboost\textasciigrave{} engine}
+\CommentTok{\# 5. A k{-}nearest neighbours,  using 4 nearest\_neighbors and the \textasciigrave{}kknn\textasciigrave{} engine }
+\CommentTok{\# Logistic regression}
+\NormalTok{log\_spec }\OtherTok{\textless{}{-}}  \FunctionTok{logistic\_reg}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\# model type}
+  \FunctionTok{set\_engine}\NormalTok{(}\AttributeTok{engine =} \StringTok{"glm"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\# model engine}
+  \FunctionTok{set\_mode}\NormalTok{(}\StringTok{"classification"}\NormalTok{) }\CommentTok{\# model mode}
+
+\CommentTok{\# Show your model specification}
+\NormalTok{log\_spec}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Logistic Regression Model Specification (classification)
+## 
+## Computational engine: glm
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Decision Tree}
+\NormalTok{tree\_spec }\OtherTok{\textless{}{-}} \FunctionTok{decision\_tree}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{set\_engine}\NormalTok{(}\AttributeTok{engine =} \StringTok{"C5.0"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{set\_mode}\NormalTok{(}\StringTok{"classification"}\NormalTok{)}
+
+\NormalTok{tree\_spec}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Decision Tree Model Specification (classification)
+## 
+## Computational engine: C5.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Random Forest}
+\FunctionTok{library}\NormalTok{(ranger)}
+
+\NormalTok{rf\_spec }\OtherTok{\textless{}{-}} 
+  \FunctionTok{rand\_forest}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{set\_engine}\NormalTok{(}\StringTok{"ranger"}\NormalTok{, }\AttributeTok{importance =} \StringTok{"impurity"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{set\_mode}\NormalTok{(}\StringTok{"classification"}\NormalTok{)}
+
+
+\CommentTok{\# Boosted tree (XGBoost)}
+\FunctionTok{library}\NormalTok{(xgboost)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'xgboost'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     slice
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{xgb\_spec }\OtherTok{\textless{}{-}} 
+  \FunctionTok{boost\_tree}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{set\_engine}\NormalTok{(}\StringTok{"xgboost"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{set\_mode}\NormalTok{(}\StringTok{"classification"}\NormalTok{) }
+
+\CommentTok{\# K{-}nearest neighbour (k{-}NN)}
+\NormalTok{knn\_spec }\OtherTok{\textless{}{-}} 
+  \FunctionTok{nearest\_neighbor}\NormalTok{(}\AttributeTok{neighbors =} \DecValTok{4}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# we can adjust the number of neighbors }
+  \FunctionTok{set\_engine}\NormalTok{(}\StringTok{"kknn"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{set\_mode}\NormalTok{(}\StringTok{"classification"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{bundle-recipe-and-model-with-workflows}{%
+\subsection{\texorpdfstring{Bundle recipe and model with
+\texttt{workflows}}{Bundle recipe and model with workflows}}\label{bundle-recipe-and-model-with-workflows}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{log\_wflow }\OtherTok{\textless{}{-}} \CommentTok{\# new workflow object}
+ \FunctionTok{workflow}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# use workflow function}
+ \FunctionTok{add\_recipe}\NormalTok{(fraud\_rec) }\SpecialCharTok{\%\textgreater{}\%}   \CommentTok{\# use the new recipe}
+ \FunctionTok{add\_model}\NormalTok{(log\_spec)   }\CommentTok{\# add your model spec}
+
+\CommentTok{\# show object}
+\NormalTok{log\_wflow}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## == Workflow ====================================================================
+## Preprocessor: Recipe
+## Model: logistic_reg()
+## 
+## -- Preprocessor ----------------------------------------------------------------
+## 6 Recipe Steps
+## 
+## * step_log()
+## * step_naomit()
+## * step_novel()
+## * step_normalize()
+## * step_dummy()
+## * step_zv()
+## 
+## -- Model -----------------------------------------------------------------------
+## Logistic Regression Model Specification (classification)
+## 
+## Computational engine: glm
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# A few more workflows}
+
+\NormalTok{tree\_wflow }\OtherTok{\textless{}{-}}
+ \FunctionTok{workflow}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+ \FunctionTok{add\_recipe}\NormalTok{(fraud\_rec) }\SpecialCharTok{\%\textgreater{}\%} 
+ \FunctionTok{add\_model}\NormalTok{(tree\_spec) }
+
+\NormalTok{rf\_wflow }\OtherTok{\textless{}{-}}
+ \FunctionTok{workflow}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+ \FunctionTok{add\_recipe}\NormalTok{(fraud\_rec) }\SpecialCharTok{\%\textgreater{}\%} 
+ \FunctionTok{add\_model}\NormalTok{(rf\_spec) }
+
+\NormalTok{xgb\_wflow }\OtherTok{\textless{}{-}}
+ \FunctionTok{workflow}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+ \FunctionTok{add\_recipe}\NormalTok{(fraud\_rec) }\SpecialCharTok{\%\textgreater{}\%} 
+ \FunctionTok{add\_model}\NormalTok{(xgb\_spec)}
+
+\NormalTok{knn\_wflow }\OtherTok{\textless{}{-}}
+ \FunctionTok{workflow}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+ \FunctionTok{add\_recipe}\NormalTok{(fraud\_rec) }\SpecialCharTok{\%\textgreater{}\%} 
+ \FunctionTok{add\_model}\NormalTok{(knn\_spec)}
+
+\DocumentationTok{\#\# Bundle recipe and model with \textasciigrave{}workflows\textasciigrave{}}
+
+
+\NormalTok{log\_wflow }\OtherTok{\textless{}{-}} \CommentTok{\# new workflow object}
+ \FunctionTok{workflow}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# use workflow function}
+ \FunctionTok{add\_recipe}\NormalTok{(fraud\_rec) }\SpecialCharTok{\%\textgreater{}\%}   \CommentTok{\# use the new recipe}
+ \FunctionTok{add\_model}\NormalTok{(log\_spec)   }\CommentTok{\# add your model spec}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{fit-models}{%
+\subsection{Fit models}\label{fit-models}}
+
+You may want to compare the time it takes to fit each model.
+\texttt{tic()} starts a simple timer and \texttt{toc()} stops it
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tic}\NormalTok{()}
+\NormalTok{log\_res }\OtherTok{\textless{}{-}}\NormalTok{ log\_wflow }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{fit\_resamples}\NormalTok{(}
+    \AttributeTok{resamples =}\NormalTok{ cv\_folds, }
+    \AttributeTok{metrics =} \FunctionTok{metric\_set}\NormalTok{(}
+\NormalTok{      recall, precision, f\_meas, accuracy,}
+\NormalTok{      kap, roc\_auc, sens, spec),}
+    \AttributeTok{control =} \FunctionTok{control\_resamples}\NormalTok{(}\AttributeTok{save\_pred =} \ConstantTok{TRUE}\NormalTok{)) }
+\NormalTok{time }\OtherTok{\textless{}{-}} \FunctionTok{toc}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 1.28 sec elapsed
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{log\_time }\OtherTok{\textless{}{-}}\NormalTok{ time[[}\DecValTok{4}\NormalTok{]]}
+
+\DocumentationTok{\#\# Evaluate Models}
+
+\DocumentationTok{\#\# Logistic regression results\{.smaller\}}
+
+\NormalTok{log\_res }\OtherTok{\textless{}{-}}\NormalTok{ log\_wflow }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{fit\_resamples}\NormalTok{(}
+    \AttributeTok{resamples =}\NormalTok{ cv\_folds, }
+    \AttributeTok{metrics =} \FunctionTok{metric\_set}\NormalTok{(}
+\NormalTok{      recall, precision, f\_meas, accuracy,}
+\NormalTok{      kap, roc\_auc, sens, spec),}
+    \AttributeTok{control =} \FunctionTok{control\_resamples}\NormalTok{(}\AttributeTok{save\_pred =} \ConstantTok{TRUE}\NormalTok{)) }
+
+\CommentTok{\# Show average performance over all folds (note that we use log\_res):}
+\NormalTok{log\_res }\SpecialCharTok{\%\textgreater{}\%}  \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarize =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 8 x 6
+##   .metric   .estimator  mean     n   std_err .config             
+##   <chr>     <chr>      <dbl> <int>     <dbl> <chr>               
+## 1 accuracy  binary     0.994     3 0.000287  Preprocessor1_Model1
+## 2 f_meas    binary     0.178     3 0.0562    Preprocessor1_Model1
+## 3 kap       binary     0.177     3 0.0559    Preprocessor1_Model1
+## 4 precision binary     0.668     3 0.0558    Preprocessor1_Model1
+## 5 recall    binary     0.106     3 0.0366    Preprocessor1_Model1
+## 6 roc_auc   binary     0.851     3 0.0111    Preprocessor1_Model1
+## 7 sens      binary     0.106     3 0.0366    Preprocessor1_Model1
+## 8 spec      binary     1.00      3 0.0000858 Preprocessor1_Model1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Show performance for every single fold:}
+\NormalTok{log\_res }\SpecialCharTok{\%\textgreater{}\%}  \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarize =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 24 x 5
+##    id    .metric   .estimator .estimate .config             
+##    <chr> <chr>     <chr>          <dbl> <chr>               
+##  1 Fold1 recall    binary        0.0388 Preprocessor1_Model1
+##  2 Fold1 precision binary        0.571  Preprocessor1_Model1
+##  3 Fold1 f_meas    binary        0.0727 Preprocessor1_Model1
+##  4 Fold1 accuracy  binary        0.994  Preprocessor1_Model1
+##  5 Fold1 kap       binary        0.0720 Preprocessor1_Model1
+##  6 Fold1 sens      binary        0.0388 Preprocessor1_Model1
+##  7 Fold1 spec      binary        1.00   Preprocessor1_Model1
+##  8 Fold1 roc_auc   binary        0.871  Preprocessor1_Model1
+##  9 Fold2 recall    binary        0.165  Preprocessor1_Model1
+## 10 Fold2 precision binary        0.667  Preprocessor1_Model1
+## # i 14 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# \textasciigrave{}collect\_predictions()\textasciigrave{} and get confusion matrix\{.smaller\}}
+
+\NormalTok{log\_pred }\OtherTok{\textless{}{-}}\NormalTok{ log\_res }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{collect\_predictions}\NormalTok{()}
+
+\NormalTok{log\_pred }\SpecialCharTok{\%\textgreater{}\%}  \FunctionTok{conf\_mat}\NormalTok{(is\_fraud, .pred\_class) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           Truth
+## Prediction     1     0
+##          1    33    15
+##          0   282 53351
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{log\_pred }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{conf\_mat}\NormalTok{(is\_fraud, .pred\_class) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{autoplot}\NormalTok{(}\AttributeTok{type =} \StringTok{"mosaic"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_label}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}
+      \AttributeTok{x =}\NormalTok{ (xmax }\SpecialCharTok{+}\NormalTok{ xmin) }\SpecialCharTok{/} \DecValTok{2}\NormalTok{, }
+      \AttributeTok{y =}\NormalTok{ (ymax }\SpecialCharTok{+}\NormalTok{ ymin) }\SpecialCharTok{/} \DecValTok{2}\NormalTok{, }
+      \AttributeTok{label =} \FunctionTok{c}\NormalTok{(}\StringTok{"TP"}\NormalTok{, }\StringTok{"FN"}\NormalTok{, }\StringTok{"FP"}\NormalTok{, }\StringTok{"TN"}\NormalTok{)))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_group_project_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{log\_pred }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{conf\_mat}\NormalTok{(is\_fraud, .pred\_class) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{autoplot}\NormalTok{(}\AttributeTok{type =} \StringTok{"heatmap"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_group_project_files/figure-latex/unnamed-chunk-10-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# ROC Curve}
+
+\NormalTok{log\_pred }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(id) }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# id contains our folds}
+  \FunctionTok{roc\_curve}\NormalTok{(is\_fraud, .pred\_1) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{autoplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_group_project_files/figure-latex/unnamed-chunk-10-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Decision Tree results}
+
+\NormalTok{tree\_res }\OtherTok{\textless{}{-}}
+\NormalTok{  tree\_wflow }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{fit\_resamples}\NormalTok{(}
+    \AttributeTok{resamples =}\NormalTok{ cv\_folds, }
+    \AttributeTok{metrics =} \FunctionTok{metric\_set}\NormalTok{(}
+\NormalTok{      recall, precision, f\_meas, }
+\NormalTok{      accuracy, kap,}
+\NormalTok{      roc\_auc, sens, spec),}
+    \AttributeTok{control =} \FunctionTok{control\_resamples}\NormalTok{(}\AttributeTok{save\_pred =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{    ) }
+
+\NormalTok{tree\_res }\SpecialCharTok{\%\textgreater{}\%}  \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarize =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 8 x 6
+##   .metric   .estimator  mean     n   std_err .config             
+##   <chr>     <chr>      <dbl> <int>     <dbl> <chr>               
+## 1 accuracy  binary     0.997     3 0.000541  Preprocessor1_Model1
+## 2 f_meas    binary     0.744     3 0.0474    Preprocessor1_Model1
+## 3 kap       binary     0.743     3 0.0476    Preprocessor1_Model1
+## 4 precision binary     0.857     3 0.0219    Preprocessor1_Model1
+## 5 recall    binary     0.660     3 0.0608    Preprocessor1_Model1
+## 6 roc_auc   binary     0.906     3 0.0222    Preprocessor1_Model1
+## 7 sens      binary     0.660     3 0.0608    Preprocessor1_Model1
+## 8 spec      binary     0.999     3 0.0000819 Preprocessor1_Model1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Random Forest}
+
+\NormalTok{rf\_res }\OtherTok{\textless{}{-}}
+\NormalTok{  rf\_wflow }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{fit\_resamples}\NormalTok{(}
+    \AttributeTok{resamples =}\NormalTok{ cv\_folds, }
+    \AttributeTok{metrics =} \FunctionTok{metric\_set}\NormalTok{(}
+\NormalTok{      recall, precision, f\_meas, }
+\NormalTok{      accuracy, kap,}
+\NormalTok{      roc\_auc, sens, spec),}
+    \AttributeTok{control =} \FunctionTok{control\_resamples}\NormalTok{(}\AttributeTok{save\_pred =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{    ) }
+
+\NormalTok{rf\_res }\SpecialCharTok{\%\textgreater{}\%}  \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarize =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 8 x 6
+##   .metric   .estimator  mean     n   std_err .config             
+##   <chr>     <chr>      <dbl> <int>     <dbl> <chr>               
+## 1 accuracy  binary     0.997     3 0.000372  Preprocessor1_Model1
+## 2 f_meas    binary     0.679     3 0.0331    Preprocessor1_Model1
+## 3 kap       binary     0.678     3 0.0332    Preprocessor1_Model1
+## 4 precision binary     0.971     3 0.0150    Preprocessor1_Model1
+## 5 recall    binary     0.525     3 0.0394    Preprocessor1_Model1
+## 6 roc_auc   binary     0.965     3 0.00339   Preprocessor1_Model1
+## 7 sens      binary     0.525     3 0.0394    Preprocessor1_Model1
+## 8 spec      binary     1.00      3 0.0000496 Preprocessor1_Model1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Boosted tree {-} XGBoost}
+
+\NormalTok{xgb\_res }\OtherTok{\textless{}{-}} 
+\NormalTok{  xgb\_wflow }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{fit\_resamples}\NormalTok{(}
+    \AttributeTok{resamples =}\NormalTok{ cv\_folds, }
+    \AttributeTok{metrics =} \FunctionTok{metric\_set}\NormalTok{(}
+\NormalTok{      recall, precision, f\_meas, }
+\NormalTok{      accuracy, kap,}
+\NormalTok{      roc\_auc, sens, spec),}
+    \AttributeTok{control =} \FunctionTok{control\_resamples}\NormalTok{(}\AttributeTok{save\_pred =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{    ) }
+
+\NormalTok{xgb\_res }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarize =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 8 x 6
+##   .metric   .estimator  mean     n   std_err .config             
+##   <chr>     <chr>      <dbl> <int>     <dbl> <chr>               
+## 1 accuracy  binary     0.998     3 0.000271  Preprocessor1_Model1
+## 2 f_meas    binary     0.795     3 0.0201    Preprocessor1_Model1
+## 3 kap       binary     0.794     3 0.0202    Preprocessor1_Model1
+## 4 precision binary     0.910     3 0.00491   Preprocessor1_Model1
+## 5 recall    binary     0.708     3 0.0322    Preprocessor1_Model1
+## 6 roc_auc   binary     0.971     3 0.00728   Preprocessor1_Model1
+## 7 sens      binary     0.708     3 0.0322    Preprocessor1_Model1
+## 8 spec      binary     1.00      3 0.0000186 Preprocessor1_Model1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# K{-}nearest neighbour}
+
+\NormalTok{knn\_res }\OtherTok{\textless{}{-}} 
+\NormalTok{  knn\_wflow }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{fit\_resamples}\NormalTok{(}
+    \AttributeTok{resamples =}\NormalTok{ cv\_folds, }
+    \AttributeTok{metrics =} \FunctionTok{metric\_set}\NormalTok{(}
+\NormalTok{      recall, precision, f\_meas, }
+\NormalTok{      accuracy, kap,}
+\NormalTok{      roc\_auc, sens, spec),}
+    \AttributeTok{control =} \FunctionTok{control\_resamples}\NormalTok{(}\AttributeTok{save\_pred =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{    ) }
+
+\NormalTok{knn\_res }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarize =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 8 x 6
+##   .metric   .estimator  mean     n  std_err .config             
+##   <chr>     <chr>      <dbl> <int>    <dbl> <chr>               
+## 1 accuracy  binary     0.996     3 0.000227 Preprocessor1_Model1
+## 2 f_meas    binary     0.603     3 0.00682  Preprocessor1_Model1
+## 3 kap       binary     0.600     3 0.00681  Preprocessor1_Model1
+## 4 precision binary     0.683     3 0.00488  Preprocessor1_Model1
+## 5 recall    binary     0.539     3 0.0126   Preprocessor1_Model1
+## 6 roc_auc   binary     0.838     3 0.0103   Preprocessor1_Model1
+## 7 sens      binary     0.539     3 0.0126   Preprocessor1_Model1
+## 8 spec      binary     0.999     3 0.000132 Preprocessor1_Model1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{log\_metrics }\OtherTok{\textless{}{-}} 
+\NormalTok{  log\_res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarise =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# add the name of the model to every row}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{model =} \StringTok{"Logistic Regression"}\NormalTok{) }
+
+\NormalTok{tree\_metrics }\OtherTok{\textless{}{-}} 
+\NormalTok{  tree\_res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarise =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{model =} \StringTok{"Decision Tree"}\NormalTok{)}
+
+\NormalTok{rf\_metrics }\OtherTok{\textless{}{-}} 
+\NormalTok{  rf\_res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarise =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{model =} \StringTok{"Random Forest"}\NormalTok{)}
+
+\NormalTok{xgb\_metrics }\OtherTok{\textless{}{-}} 
+\NormalTok{  xgb\_res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarise =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{model =} \StringTok{"XGBoost"}\NormalTok{)}
+
+\NormalTok{knn\_metrics }\OtherTok{\textless{}{-}} 
+\NormalTok{  knn\_res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarise =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{model =} \StringTok{"Knn"}\NormalTok{)}
+
+\CommentTok{\# create dataframe with all models}
+\NormalTok{model\_compare }\OtherTok{\textless{}{-}} \FunctionTok{bind\_rows}\NormalTok{(log\_metrics,}
+\NormalTok{                           tree\_metrics,}
+\NormalTok{                           rf\_metrics,}
+\NormalTok{                           xgb\_metrics,}
+\NormalTok{                           knn\_metrics)}
+\CommentTok{\#Pivot wider to create barplot}
+\NormalTok{  model\_comp }\OtherTok{\textless{}{-}}\NormalTok{ model\_compare }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(model, .metric, mean, std\_err) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pivot\_wider}\NormalTok{(}\AttributeTok{names\_from =}\NormalTok{ .metric, }\AttributeTok{values\_from =} \FunctionTok{c}\NormalTok{(mean, std\_err)) }
+
+\CommentTok{\# show mean are under the curve (ROC{-}AUC) for every model}
+\NormalTok{model\_comp }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(mean\_roc\_auc) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{model =} \FunctionTok{fct\_reorder}\NormalTok{(model, mean\_roc\_auc)) }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# order results}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(model, mean\_roc\_auc, }\AttributeTok{fill=}\NormalTok{model)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =} \StringTok{"Blues"}\NormalTok{) }\SpecialCharTok{+}
+   \FunctionTok{geom\_text}\NormalTok{(}
+     \AttributeTok{size =} \DecValTok{3}\NormalTok{,}
+     \FunctionTok{aes}\NormalTok{(}\AttributeTok{label =} \FunctionTok{round}\NormalTok{(mean\_roc\_auc, }\DecValTok{2}\NormalTok{), }
+         \AttributeTok{y =}\NormalTok{ mean\_roc\_auc }\SpecialCharTok{+} \FloatTok{0.08}\NormalTok{),}
+     \AttributeTok{vjust =} \DecValTok{1}
+\NormalTok{  )}\SpecialCharTok{+}
+  \FunctionTok{theme\_light}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y =} \ConstantTok{NULL}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_group_project_files/figure-latex/unnamed-chunk-15-1.pdf}
+\#\# Which metric to use
+
+This is a highly imbalanced data set, as roughly 99.5\% of all
+transactions are ok, and it's only 0.5\% of transactions that are
+fraudulent. A \texttt{naive} model, which classifies everything as ok
+and not-fraud, would have an accuracy of 99.5\%, but what about the
+sensitivity, specificity, the AUC, etc?
+
+\hypertarget{last_fit}{%
+\subsection{`last\_fit()}\label{last_fit}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# \textasciigrave{}last\_fit()\textasciigrave{} on test set}
+
+\CommentTok{\# {-} \textasciigrave{}last\_fit()\textasciigrave{}  fits a model to the whole training data and evaluates it on the test set. }
+\CommentTok{\# {-} provide the workflow object of the best model as well as the data split object (not the training data). }
+ 
+\NormalTok{last\_fit\_xgb }\OtherTok{\textless{}{-}} \FunctionTok{last\_fit}\NormalTok{(xgb\_wflow, }
+                        \AttributeTok{split =}\NormalTok{ data\_split,}
+                        \AttributeTok{metrics =} \FunctionTok{metric\_set}\NormalTok{(}
+\NormalTok{                          accuracy, f\_meas, kap, precision,}
+\NormalTok{                          recall, roc\_auc, sens, spec))}
+
+\NormalTok{last\_fit\_xgb }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarize =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 8 x 4
+##   .metric   .estimator .estimate .config             
+##   <chr>     <chr>          <dbl> <chr>               
+## 1 accuracy  binary         0.998 Preprocessor1_Model1
+## 2 f_meas    binary         0.781 Preprocessor1_Model1
+## 3 kap       binary         0.780 Preprocessor1_Model1
+## 4 precision binary         0.919 Preprocessor1_Model1
+## 5 recall    binary         0.679 Preprocessor1_Model1
+## 6 sens      binary         0.679 Preprocessor1_Model1
+## 7 spec      binary         1.00  Preprocessor1_Model1
+## 8 roc_auc   binary         0.985 Preprocessor1_Model1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Compare to training}
+\NormalTok{xgb\_res }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarize =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 8 x 6
+##   .metric   .estimator  mean     n   std_err .config             
+##   <chr>     <chr>      <dbl> <int>     <dbl> <chr>               
+## 1 accuracy  binary     0.998     3 0.000271  Preprocessor1_Model1
+## 2 f_meas    binary     0.795     3 0.0201    Preprocessor1_Model1
+## 3 kap       binary     0.794     3 0.0202    Preprocessor1_Model1
+## 4 precision binary     0.910     3 0.00491   Preprocessor1_Model1
+## 5 recall    binary     0.708     3 0.0322    Preprocessor1_Model1
+## 6 roc_auc   binary     0.971     3 0.00728   Preprocessor1_Model1
+## 7 sens      binary     0.708     3 0.0322    Preprocessor1_Model1
+## 8 spec      binary     1.00      3 0.0000186 Preprocessor1_Model1
+\end{verbatim}
+
+\hypertarget{get-variable-importance-using-vip-package}{%
+\subsection{\texorpdfstring{Get variable importance using \texttt{vip}
+package}{Get variable importance using vip package}}\label{get-variable-importance-using-vip-package}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Variable importance using \textasciigrave{}\{vip\}\textasciigrave{} package}
+
+\FunctionTok{library}\NormalTok{(vip)}
+
+\NormalTok{last\_fit\_xgb }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pluck}\NormalTok{(}\StringTok{".workflow"}\NormalTok{, }\DecValTok{1}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}   
+  \FunctionTok{pull\_workflow\_fit}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{vip}\NormalTok{(}\AttributeTok{num\_features =} \DecValTok{10}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_light}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: `pull_workflow_fit()` was deprecated in workflows 0.2.3.
+## i Please use `extract_fit_parsnip()` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+\end{verbatim}
+
+\includegraphics{final_group_project_files/figure-latex/unnamed-chunk-18-1.pdf}
+\#\# Plot Final Confusion matrix and ROC curve
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Final Confusion Matrix}
+
+\NormalTok{last\_fit\_xgb }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{collect\_predictions}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{conf\_mat}\NormalTok{(is\_fraud, .pred\_class) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{autoplot}\NormalTok{(}\AttributeTok{type =} \StringTok{"heatmap"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_group_project_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Final ROC curve}
+\NormalTok{last\_fit\_xgb }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{collect\_predictions}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{roc\_curve}\NormalTok{(is\_fraud, .pred\_1) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{autoplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_group_project_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+\hypertarget{compare-models}{%
+\subsection{Compare models}\label{compare-models}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Model Comparison}
+
+\NormalTok{log\_metrics }\OtherTok{\textless{}{-}} 
+\NormalTok{  log\_res }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{collect\_metrics}\NormalTok{(}\AttributeTok{summarise =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \CommentTok{\# add the name of the model to every row}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{model =} \StringTok{"Logistic Regression"}\NormalTok{,}
+         \AttributeTok{time =}\NormalTok{ log\_time)}
+
+\CommentTok{\# add mode models here}
+
+\CommentTok{\# create dataframe with all models}
+\NormalTok{model\_compare }\OtherTok{\textless{}{-}} \FunctionTok{bind\_rows}\NormalTok{(log\_metrics,}
+\NormalTok{                            tree\_metrics,}
+\NormalTok{                            rf\_metrics,}
+\NormalTok{                           xgb\_metrics,}
+\NormalTok{                           knn\_metrics}
+\NormalTok{                      ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \CommentTok{\# get rid of \textquotesingle{}sec elapsed\textquotesingle{} and turn it into a number}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{time =} \FunctionTok{str\_sub}\NormalTok{(time, }\AttributeTok{end =} \SpecialCharTok{{-}}\DecValTok{13}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+           \FunctionTok{as.double}\NormalTok{()}
+\NormalTok{         )}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{calculating-the-cost-of-fraud-to-the-company}{%
+\subsection{Calculating the cost of fraud to the
+company}\label{calculating-the-cost-of-fraud-to-the-company}}
+
+\begin{itemize}
+\tightlist
+\item
+  How much money (in US\$ terms) are fraudulent transactions costing the
+  company? Generate a table that summarizes the total amount of
+  legitimate and fraudulent transactions per year and calculate the \%
+  of fraudulent transactions, in US\$ terms. Compare your model vs the
+  naive classification that we do not have any fraudulent transactions.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{best\_model\_preds }\OtherTok{\textless{}{-}} 
+\NormalTok{  rf\_wflow }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{fit}\NormalTok{(}\AttributeTok{data =}\NormalTok{ card\_fraud\_train) }\SpecialCharTok{\%\textgreater{}\%}  
+  
+  \DocumentationTok{\#\# Use \textasciigrave{}augment()\textasciigrave{} to get predictions for entire data set}
+  \FunctionTok{augment}\NormalTok{(}\AttributeTok{new\_data =}\NormalTok{ card\_fraud)}
+
+\NormalTok{best\_model\_preds }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{conf\_mat}\NormalTok{(}\AttributeTok{truth =}\NormalTok{ is\_fraud, }\AttributeTok{estimate =}\NormalTok{ .pred\_class)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##           Truth
+## Prediction      1      0
+##          1   2212    116
+##          0   1724 666976
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cost }\OtherTok{\textless{}{-}}\NormalTok{ best\_model\_preds }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(is\_fraud, amt, }\AttributeTok{pred =}\NormalTok{ .pred\_class) }
+
+\NormalTok{cost }\OtherTok{\textless{}{-}}\NormalTok{ cost }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(naive\_false }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(pred }\SpecialCharTok{!=}\NormalTok{ is\_fraud),}
+\NormalTok{false\_negatives }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(pred }\SpecialCharTok{==} \DecValTok{0} \SpecialCharTok{\&}\NormalTok{ is\_fraud }\SpecialCharTok{==} \DecValTok{1}\NormalTok{),}
+\NormalTok{false\_positives }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(pred }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ is\_fraud }\SpecialCharTok{==} \DecValTok{0}\NormalTok{),}
+\NormalTok{true\_positives }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(pred }\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ is\_fraud }\SpecialCharTok{==} \DecValTok{1}\NormalTok{),}
+\NormalTok{true\_negatives }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(pred }\SpecialCharTok{==}\DecValTok{0}\SpecialCharTok{\&}\NormalTok{is\_fraud}\SpecialCharTok{==}\DecValTok{0}\NormalTok{))}
+  
+
+  \CommentTok{\# naive false{-}{-} we think every single transaction is ok and not fraud}
+
+
+  \CommentTok{\# false negatives{-}{-} we thought they were not fraud, but they were}
+
+  
+  
+  \CommentTok{\# false positives{-}{-} we thought they were fraud, but they were not}
+
+  
+    
+  \CommentTok{\# true positives{-}{-} we thought they were fraud, and they were }
+
+
+  
+  \CommentTok{\# true negatives{-}{-} we thought they were ok, and they were }
+
+  
+\CommentTok{\# Summarising}
+
+\NormalTok{cost\_summary }\OtherTok{\textless{}{-}}\NormalTok{ cost }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{starts\_with}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"false"}\NormalTok{,}\StringTok{"true"}\NormalTok{, }\StringTok{"amt"}\NormalTok{)), }
+            \SpecialCharTok{\textasciitilde{}} \FunctionTok{sum}\NormalTok{(.x, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)))}
+
+\NormalTok{cost\_summary}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 5
+##   false_negatives <- sum(pred ==~1 false_positives <- s~2 true_positives <- su~3
+##                              <int>                  <int>                  <int>
+## 1                       1156852272               77839248             1484313936
+## # i abbreviated names: 1: `false_negatives <- sum(pred == 0 & is_fraud == 1)`,
+## #   2: `false_positives <- sum(pred == 1 & is_fraud == 0)`,
+## #   3: `true_positives <- sum(pred == 1 & is_fraud == 1)`
+## # i 2 more variables: `true_negatives <- sum(pred == 0 & is_fraud == 0)` <dbl>,
+## #   amt <dbl>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(cost\_summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 1
+## Columns: 5
+## $ `false_negatives <- sum(pred == 0 & is_fraud == 1)` <int> 1156852272
+## $ `false_positives <- sum(pred == 1 & is_fraud == 0)` <int> 77839248
+## $ `true_positives <- sum(pred == 1 & is_fraud == 1)`  <int> 1484313936
+## $ `true_negatives <- sum(pred == 0 & is_fraud == 0)`  <dbl> 447559571328
+## $ amt                                                 <dbl> 47183904
+\end{verbatim}
+
+\begin{itemize}
+\item
+  If we use a naive classifier thinking that all transactions are
+  legitimate and not fraudulent, the cost to the company is .
+\item
+  With our best model, the total cost of false negatives, namely
+  transactions our classifier thinks are legitimate but which turned out
+  to be fraud, is .
+\item
+  Our classifier also has some false positives, , namely flagging
+  transactions as fraudulent, but which were legitimate. Assuming the
+  card company makes around 2\% for each transaction (source:
+  \url{https://startups.co.uk/payment-processing/credit-card-processing-fees/}),
+  the amount of money lost due to these false positives is
+\item
+  The \$ improvement over the naive policy is .
+\end{itemize}
+
+\end{document}
